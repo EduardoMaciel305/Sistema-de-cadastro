@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição de Participante</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function mostrarCampos() {
+            const tipo = document.getElementById('tipo').value;
+            document.getElementById('aluno').style.display = (tipo === 'aluno') ? 'block' : 'none';
+            document.getElementById('responsavel').style.display = (tipo === 'responsavel') ? 'block' : 'none';
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro_palestra.html">Cadastrar Palestra</a></li>
+                <li><a href="cadastro_participante.html">Inscrever-se</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <form class="formulario" action="cadastro_participante.php" method="POST">
+            <h2>Formulário de Inscrição</h2>
+
+            <div class="campo">
+                <label>Nome Completo:</label>
+                <input type="text" name="nome_completo" required>
+            </div>
+
+            <div class="campo">
+                <label>Idade:</label>
+                <input type="number" name="idade" min="12" required>
+            </div>
+
+            <div class="campo">
+                <label>Telefone:</label>
+                <input type="tel" name="telefone" pattern="\([0-9]{2}\) [0-9]{4,5}-[0-9]{4}" placeholder="(99) 99999-9999" required>
+            </div>
+
+            <div class="campo">
+                <label>Selecione a Palestra:</label>
+                <select name="palestra" required>
+                    <option value="">Escolha uma opção</option>
+                    <option value="1">Inteligência Artificial</option>
+                    <option value="2">Robótica Avançada</option>
+                    <option value="3">Desenvolvimento Web</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Tipo de Participante:</label>
+                <select name="tipo" id="tipo" onchange="mostrarCampos()" required>
+                    <option value="">Selecione</option>
+                    <option value="aluno">Aluno</option>
+                    <option value="responsavel">Pai/Responsável</option>
+                </select>
+            </div>
+
+            <div id="aluno" class="campo" style="display:none;">
+                <label>Registro Escolar (RM):</label>
+                <input type="text" name="rm">
+            </div>
+
+            <div id="responsavel" class="campo" style="display:none;">
+                <label>CPF:</label>
+                <input type="text" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" placeholder="000.000.000-00">
+            </div>
+
+            <button type="submit" class="botao">Realizar Inscrição</button>
+        </form>
+    </main>
+</body>
+</html>

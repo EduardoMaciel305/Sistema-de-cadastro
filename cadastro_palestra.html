@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Palestra</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro_palestra.html">Cadastrar Palestra</a></li>
+                <li><a href="cadastro_participante.html">Inscrever-se</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <form class="formulario" action="cadastro_palestra.php" method="POST">
+            <h2>Cadastrar Nova Palestra</h2>
+            
+            <div class="campo">
+                <label>Nome da Palestra:</label>
+                <input type="text" name="nome_palestra" required>
+            </div>
+
+            <div class="campo">
+                <label>Descrição:</label>
+                <textarea name="descricao" rows="4" required></textarea>
+            </div>
+
+            <div class="campo">
+                <label>Palestrante:</label>
+                <input type="text" name="palestrante" required>
+            </div>
+
+            <div class="campo">
+                <label>Horário:</label>
+                <input type="datetime-local" name="horario" required>
+            </div>
+
+            <button type="submit" class="botao">Cadastrar Palestra</button>
+        </form>
+    </main>
+</body>
+</html>

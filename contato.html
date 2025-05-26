@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cadastro_palestra.html">Cadastrar Palestra</a></li>
+                <li><a href="cadastro_participante.html">Inscrever-se</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="info-contato">
+            <h2>Informações de Contato</h2>
+            <p>📧 Email: feira@tecnologia.com</p>
+            <p>📞 Telefone: (11) 4002-8922</p>
+            <address>
+                🏫 Endereço: Rua das Inovações, 123<br>
+                Bairro Tecnológico - São Paulo/SP<br>
+                CEP: 01234-567
+            </address>
+        </section>
+
+        <form class="formulario" action="contato.php" method="POST">
+            <h2>Formulário de Contato</h2>
+            
+            <div class="campo">
+                <label>Seu Nome:</label>
+                <input type="text" name="nome" required>
+            </div>
+
+            <div class="campo">
+                <label>Seu Email:</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="campo">
+                <label>Mensagem:</label>
+                <textarea name="mensagem" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="botao">Enviar Mensagem</button>
+        </form>
+    </main>
+</body>
+</html>
